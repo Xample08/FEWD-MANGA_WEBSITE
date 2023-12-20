@@ -14,7 +14,7 @@ $(document).ready(function () {
             tags: ["Recommended", "Horror", "Thriller"],
             description: "Yuuji is a genius at track and field. But he has zero interest running around in circles, he's happy as a clam in the Occult Research Club. Although he's only in the club for kicks, things get serious when a real spirit shows up at school! Life's about to get really strange in Sugisawa Town #3 High School!",
             author: "Gege Akutami",
-            active: true,
+            active: false,
         },
     ];
 
