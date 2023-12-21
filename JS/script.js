@@ -1,19 +1,45 @@
 $(document).ready(function () {
     var mangaData = [
         {
-            imageSrc: "../IMAGE/MANGACOVER/jujutsuKaisenVol4.jpg",
+            imageSrc: "../IMAGE/MANGACOVER/JujutsuKaisenVol4.jpg",
             name: "Jujutsu Kaisen",
-            tags: ["Recommended", "Horror", "Thriller"],
-            description: "Yuuji is a genius at track and field. But he has zero interest running around in circles, he's happy as a clam in the Occult Research Club. Although he's only in the club for kicks, things get serious when a real spirit shows up at school! Life's about to get really strange in Sugisawa Town #3 High School!",
-            author: "Gege Akutami",
+            tags: ["Recommended", "Thriller", "Action", "Demons", "Ghosts", "Martial Arts", "Magic", "School Life", "Fantasy", "Supernatural", "Mystery", "Tragedy"],
+            description: `In a world where cursed spirits feed on unsuspecting humans, fragments of the legendary and feared demon Ryomen Sukuna have been lost and scattered about. Should any demon consume Sukunas body parts, the power they gain could destroy the world as we know it. fortunatly, there exists a mysteious school of Jujutsu Sorcerers who exist to protect the precarious existence of the living from the supernatural.`,
+            author: "Akutami Gege",
             active: true,
         },
         {
-            imageSrc: "../IMAGE/MANGACOVER/jujutsuKaisenVol4.jpg",
+            imageSrc: "../IMAGE/MANGACOVER/HaikyuuVol33.jpg",
+            name: "Haikyuu!!",
+            tags: ["Recommended", "Award Winning", "Action", "Comedy", "Sports", "Adventure", "Drama", "School Life", "Slice of Life"],
+            description: `After losing his first and last volleyball match against Tobio Kageyama, "the King of the Court," Shoyo Hinata swears to become his rival after graduating middle school. But what happens when the guy he wants to defeat ends up being his teammate?!`,
+            author: "Furudate Haruichi",
+            active: false,
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/KaguyaSamaLoveIsWarVol21.jpg",
+            name: "Kaguya-sama: Love Is War",
+            tags: ["Recommended", "Psychological", "Romance", "Comedy", "School Life", "Slice of Life"],
+            description: `All's fair when love is war!
+
+            Two geniuses. Two brains. Two hearts. One battle. Who will confess their love first…?!`,
+            author: "Akasaka Aka",
+            active: false,
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/ChainsawManVol3.jpg",
+            name: "Chainsaw Man",
+            tags: ["Recommended", "Monsters", "Action", "Demons", "Comedy", "Horror", "Supernatural"],
+            description: `The name says it all! Denji's life of poverty is changed forever when he merges with his pet chainsaw dog, Pochita! Now he's living in the big city and an official Devil Hunter. But he's got a lot to learn about his new job and chainsaw powers!`,
+            author: "Fujimoto Tatsuki",
+            active: false,
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/JujutsuKaisenVol8.jpg",
             name: "Jujutsu Kaisen",
-            tags: ["Recommended", "Horror", "Thriller"],
-            description: "Yuuji is a genius at track and field. But he has zero interest running around in circles, he's happy as a clam in the Occult Research Club. Although he's only in the club for kicks, things get serious when a real spirit shows up at school! Life's about to get really strange in Sugisawa Town #3 High School!",
-            author: "Gege Akutami",
+            tags: ["Recommended", "Thriller", "Action", "Demons", "Ghosts", "Martial Arts", "Magic", "School Life", "Fantasy", "Supernatural", "Mystery", "Tragedy"],
+            description: `In a world where cursed spirits feed on unsuspecting humans, fragments of the legendary and feared demon Ryomen Sukuna have been lost and scattered about. Should any demon consume Sukunas body parts, the power they gain could destroy the world as we know it. fortunatly, there exists a mysteious school of Jujutsu Sorcerers who exist to protect the precarious existence of the living from the supernatural.`,
+            author: "Akutami Gege",
             active: false,
         },
     ];
@@ -23,14 +49,19 @@ $(document).ready(function () {
     // Function to create and append carousel items
     function appendCarouselItem(data) {
         var carouselItem = $(
-            `<div class="carousel-item background-item${counter} text-white">`
+            `<div class="carousel-item pt-5 background-item${counter} text-white">`
         ).appendTo(".carousel-inner");
 
         if (data.active) {
             carouselItem.addClass("active");
         }
 
-        var tagsHtml = data.tags.map(tag => `<span class="tag rounded-pill">${tag}</span>`).join('');
+        if (data.tag == "Recommended") {
+            var tagsHtml = data.tags.map(tag => `<span class="tag tag-recommended rounded-pill">${tag}</span>`).join('');
+        }
+        else {
+            var tagsHtml = data.tags.map(tag => `<span class="tag rounded-pill">${tag}</span>`).join('');
+        }
 
         var innerContent = `
             <div class="background-item">
