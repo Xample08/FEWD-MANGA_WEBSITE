@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Catalogue</title>
+        <title>About Me</title>
         <link rel="stylesheet" href="../CSS/style.css" />
         <!-- Google Font  -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,6 +11,11 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet"
+        />
+        <!-- Devicon -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
         />
         <!-- Bootstrap CSS -->
         <link
@@ -33,117 +38,67 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-        <script 
-            src="../JS/script.js">
-        </script>
-        <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
-        <header>
-            <!-- Start Navigation Bar -->
-            <nav class="navbar navbar-expand-lg navbar-dark navColor fixed-top">
-                <div class="container py-3">
-                    <!-- Logo -->
-                    <a class="navbar-brand fs-2" href="#">Manga Mayhem</a>
-                    <!-- Toggle Button -->
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
+        <!-- Start Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark navColor fixed-top">
+            <div class="container py-3">
+                <!-- Logo -->
+                <a class="navbar-brand fs-2" href="#">Manga Mayhem</a>
+                <!-- Toggle Button -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar Items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul
+                        class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3"
                     >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navbar Items -->
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul
-                            class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3"
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="./Home.html"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="./Catalogue.html"
+                                >Catalogue</a
+                            >
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a
+                                class="nav-link"
+                                href="./AboutMe.html"
+                                >About Me</a
+                            >
+                        </li>
+                    </ul>
+                    <!-- Search Form -->
+                    <form class="d-flex" role="search">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button
+                            class="btn btn-outline-light"
+                            type="submit"
                         >
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="./LandingPage.html"
-                                    >Home</a
-                                >
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="./Catalogue.html"
-                                    >Catalogue</a
-                                >
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="./AboutMe.html"
-                                    >About Me</a
-                                >
-                            </li>
-                        </ul>
-                        <!-- Search Form -->
-                        <form class="d-flex" role="search">
-                            <input
-                                class="form-control me-2"
-                                type="search"
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
-                            <button class="btn btn-outline-light" type="submit">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-            <!-- End Navigation Bar -->
-            <!-- Start carousel Section -->
-            <div
-            id="carouselExample"
-            class="carousel slide"
-            data-bs-ride="carousel"
-        >
-            <div class="carousel-inner">
-
-                <div class="d-none d-md-block">
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#carouselExample"
-                        data-bs-slide="prev"
-                    >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#carouselExample"
-                        data-bs-slide="next"
-                    >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                            Search
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <!-- End Carousel Section -->
-    </header>
-        
-        <!-- Start Main Content Section -->
-        <section class="container text-white bg-black bg-opacity-50 my-5">
-            <!-- Add your main content here -->
-            <h4 class="header">
-                Latest Update
-            </h4>
-        </section>
-        <!-- End Main Content Section -->
+        </nav>
+        <!-- End Navigation Bar -->
         <!-- Start Footer -->
         <footer
             class="container-fluid footerColor text-light py-3 align-items-center px-5"
@@ -334,27 +289,5 @@
             <div class="container"></div>
         </footer>
         <!-- End Footer -->
-
-        <script>
-            $(document).ready(function () {
-                var lastScrollTop = 0;
-
-                function handleScroll() {
-                    var st = $(this).scrollTop();
-
-                    if (st > lastScrollTop) {
-                        $(".navbar").addClass("hidden-navbar");
-                    } else {
-                        $(".navbar").removeClass("hidden-navbar");
-                    }
-
-                    // Update the last scroll position
-                    lastScrollTop = st;
-                }
-
-                // Add a scroll event listener
-                $(window).scroll(handleScroll);
-            });
-        </script>
     </body>
 </html>

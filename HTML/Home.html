@@ -3,13 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>About Me</title>
-        <link rel="stylesheet" href="../CSS/style.css" />
-        <!-- Scroll Reveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <script>
-            ScrollReveal({ reset: true });
-        </script>
+        <title>Catalogue</title>    
         <!-- Google Font  -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,16 +11,16 @@
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet"
         />
-        <!-- Devicon -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-        />
         <!-- Bootstrap CSS -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         />
+        <!-- Scroll Reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            ScrollReveal({ reset: true });
+        </script>
         <!-- Bootstrap JS and Popper.js -->
         <script
             src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -44,20 +38,13 @@
             crossorigin="anonymous"
         ></script>
         <script 
-            src="../JS/script.js"
-        ></script>
-
-        <style>
-            /* Background image */
-            body {
-                background-image: url("../IMAGE/BACKGROUND/background.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: repeat;
-            }
-        </style>
+            src="../JS/script.js">
+        </script>
+        <link rel="stylesheet" href="../CSS/style.css" />
     </head>
     <body>
+
+        <!-- Start Header Section -->
         <header>
             <!-- Start Navigation Bar -->
             <nav class="navbar navbar-expand-lg navbar-dark navColor fixed-top">
@@ -82,20 +69,19 @@
                             class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3"
                         >
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="./Home.html"
+                                <a class="nav-link active" aria-current="page" href="./Home.html"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="./Catalogue.html"
+                                <a
+                                    class="nav-link"
+                                    href="./Catalogue.html"
                                     >Catalogue</a
                                 >
                             </li>
                             <li class="nav-item mx-2">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="./AboutMe.html"
+                                <a class="nav-link" href="./AboutMe.html"
                                     >About Me</a
                                 >
                             </li>
@@ -108,10 +94,7 @@
                                 placeholder="Search"
                                 aria-label="Search"
                             />
-                            <button
-                                class="btn btn-outline-light"
-                                type="submit"
-                            >
+                            <button class="btn btn-outline-light" type="submit">
                                 Search
                             </button>
                         </form>
@@ -119,68 +102,54 @@
                 </div>
             </nav>
             <!-- End Navigation Bar -->
-        </header>
-
-        <!-- Start Main Content Section -->
-        <section class="mt-5 container d-flex flex-column text-white">
+            <!-- Start carousel Section -->
             <div
-                class="w-auto d-flex flex-column align-items-center text-center my-3"
-            >
-                <h4 class="border-black border-3 d-lg-none border-bottom pb-3">
-                    About Me
-                </h4>
+            id="carouselExample"
+            class="carousel slide"
+            data-bs-ride="carousel"
+        >
+            <div class="carousel-inner">
+
+                <div class="d-none d-md-block">
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-            <div class="d-flex rounded-3 bg-opacity-50 px-5 py-5 gap-5 bg-dark flex-lg-row flex-column-reverse justify-content-between">
-                <div
-                    class="d-flex flex-column justify-content-between text-lg-start text-center"
-                >
-                    <div>
-                        <h1 class="main-section-text mt-lg-5">Christopher Octave Sinjaya</h1>
-                        <p class="main-section-text py-1">
-                            Welcome to my DOMAIN! I'm Christopher Octave
-                            Sinjaya, a dedicated learner at ISTTS.
-                        </p>
-                        <ul class="" id="myList">
-                            <li class="main-section-text">ITP</li>
-                            <li class="main-section-text">Front-End Web Design</li>
-                            <li class="main-section-text">Algorithm</li>
-                            <li class="main-section-text">Calculus</li>
-                            <li class="main-section-text">PTI</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h1 class="pt-5 pb-2 skill-title">Skills</h1>
-                        <ul class="list-unstyled row">
-                            <li class="col-3 skill-icon">
-                                <img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                />
-                            </li>
-                            <li class="col-3 skill-icon">
-                                <img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                />
-                            </li>
-                            <li class="col-3 skill-icon">
-                                <img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                />
-                            </li>
-                            <li class="col-3 skill-icon">
-                                <img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                                />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="order-sm-0 mx-auto">
-                    <img
-                        src="../IMAGE/Profile-Image.png"
-                        class="img-fluid rounded-3 profile-image"
-                        aria-placeholder="proile"
-                    />
-                </div>
+        </div>
+        <!-- End Carousel Section -->
+    </header>
+    <!-- End Header Section -->
+        
+        <!-- Start Main Content Section -->
+        <section class="container py-0 text-white my-5">
+            <!-- Add your main content here -->
+            <p class="fs-3 fw-semi-bold pt">
+                Latest Update
+            </p>
+            <div id="latestUpdate" class="py-1 px-1" style="background-color: rgb(44,44,44);">
+
             </div>
         </section>
         <!-- End Main Content Section -->
