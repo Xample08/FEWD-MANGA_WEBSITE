@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Catalogue</title>    
+        <title>Home</title>
         <!-- Google Font  -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +18,6 @@
         />
         <!-- Scroll Reveal -->
         <script src="https://unpkg.com/scrollreveal"></script>
-        <script>
-            ScrollReveal({ reset: true });
-        </script>
         <!-- Bootstrap JS and Popper.js -->
         <script
             src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -37,20 +34,19 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-        <script 
-            src="../JS/script.js">
-        </script>
+        <script src="../JS/script.js"></script>
         <link rel="stylesheet" href="../CSS/style.css" />
     </head>
     <body>
-
-        <!-- Start Header Section -->
+        <!-- Start Header -->
         <header>
             <!-- Start Navigation Bar -->
             <nav class="navbar navbar-expand-lg navbar-dark navColor fixed-top">
                 <div class="container py-3">
                     <!-- Logo -->
-                    <a class="navbar-brand fs-2" href="#">Manga Mayhem</a>
+                    <a class="navbar-brand fs-2 fw-bold" href="Home.html"
+                        >Manga Mayhem</a
+                    >
                     <!-- Toggle Button -->
                     <button
                         class="navbar-toggler"
@@ -69,14 +65,15 @@
                             class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3"
                         >
                             <li class="nav-item mx-2">
-                                <a class="nav-link active" aria-current="page" href="./Home.html"
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="./Home.html"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item mx-2">
-                                <a
-                                    class="nav-link"
-                                    href="./Catalogue.html"
+                                <a class="nav-link" href="./Catalogue.html"
                                     >Catalogue</a
                                 >
                             </li>
@@ -102,54 +99,19 @@
                 </div>
             </nav>
             <!-- End Navigation Bar -->
-            <!-- Start carousel Section -->
-            <div
-            id="carouselExample"
-            class="carousel slide"
-            data-bs-ride="carousel"
-        >
-            <div class="carousel-inner">
+        </header>
+        <!-- End Header Section -->
 
-                <div class="d-none d-md-block">
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#carouselExample"
-                        data-bs-slide="prev"
-                    >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#carouselExample"
-                        data-bs-slide="next"
-                    >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- End Carousel Section -->
-    </header>
-    <!-- End Header Section -->
-        
         <!-- Start Main Content Section -->
         <section class="container py-0 text-white my-5">
             <!-- Add your main content here -->
-            <p class="fs-3 fw-semi-bold pt">
-                Latest Update
-            </p>
-            <div id="latestUpdate" class="py-1 px-1" style="background-color: rgb(44,44,44);">
-
+            <p class="fs-3 fw-semi-bold pt">My Pick</p>
+            <div
+                id="latestUpdate"
+                class="py-1 px-1"
+                style="background-color: rgb(44, 44, 44)"
+            >
+                <div></div>
             </div>
         </section>
         <!-- End Main Content Section -->

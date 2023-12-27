@@ -22,7 +22,20 @@ section {
 .background-item2::before,
 .background-item3::before,
 .background-item4::before,
-.background-item5::before {
+.background-item5::before,
+.background-item6::before,
+.background-item7::before,
+.background-item8::before,
+.background-item9::before,
+.background-item10::before,
+.background-item11::before,
+.background-item12::before,
+.background-item13::before,
+.background-item14::before,
+.background-item15::before,
+.background-item16::before,
+.background-item17::before,
+.background-item18::before {
     content: "";
     position: absolute;
     top: 0;
@@ -157,3 +170,13 @@ a.textFooter {
 a.textFooter:hover {
     color: rgb(162, 162, 164);
 }
+
+
+.scroll-hidden::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scroll-hidden {
+    scrollbar-width: thin; /* Hide scrollbar for Firefox */
+}
+
