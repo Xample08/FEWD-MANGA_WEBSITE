@@ -333,8 +333,8 @@ $(document).ready(function () {
     $(window).resize(handleListStyling);
 
     // Function to search the catalogue
-    function searchBarCatalogue() {
-        var searchTerm = $("#searchBarInput").val().toLowerCase();
+    function searchBarCatalogue(inputFieldId) {
+        var searchTerm = $(inputFieldId).val().toLowerCase();
 
         $(".cardSearch").each(function() {
             var mangaName = $(this).find(".card-title").text().toLowerCase();
@@ -348,15 +348,28 @@ $(document).ready(function () {
 
     $("#searchForm").on("submit", function(event) {
         event.preventDefault();
-        searchBarCatalogue();
+        searchBarCatalogue("#searchBarInput");
     });
 
     $("#searchBarInput").on("input", function() {
-        searchBarCatalogue();
+        searchBarCatalogue("#searchBarInput");
     });
 
     $("#searchBarBtn").on("click", function() {
-        searchBarCatalogue();
+        searchBarCatalogue("#searchBarInput");
+    });
+
+    $("#searchFormNav").on("submit", function(event) {
+        event.preventDefault();
+        searchBarCatalogue("#searchBarInputNav");
+    });
+
+    $("#searchBarInputNav").on("input", function() {
+        searchBarCatalogue("#searchBarInputNav");
+    });
+
+    $("#searchBarBtnNav").on("click", function() {
+        searchBarCatalogue(".searchBarInputNav");
     });
 
     // Function to create and append carousel items
@@ -373,15 +386,15 @@ $(document).ready(function () {
         var revealTextClass = data.active ? "reveal-text" : "";
         var revealTagClass = data.active ? "reveal-tag" : "";
 
-            var tagsHtml = "";
-            for (var i = 0; i < data.tags.length; i++) {
-                var tag = data.tags[i];
-                if (tag === "Recommended") {
-                    tagsHtml += `<span class="tag ${revealTagClass} tag-recommended rounded-1 m-1">${tag}</span>`;
-                } else {
-                    tagsHtml += `<span class="tag ${revealTagClass} rounded-1 m-1">${tag}</span>`;
-                }
+        var tagsHtml = "";
+        for (var i = 0; i < data.tags.length; i++) {
+            var tag = data.tags[i];
+            if (tag === "Recommended") {
+                tagsHtml += `<span class="tag ${revealTagClass} tag-recommended rounded-1 m-1">${tag}</span>`;
+            } else {
+                tagsHtml += `<span class="tag ${revealTagClass} rounded-1 m-1">${tag}</span>`;
             }
+        }
         
         var innerContent = `
             <div style="padding-top: ${navbarHeight}px" class="background-item">
