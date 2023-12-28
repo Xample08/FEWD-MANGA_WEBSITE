@@ -201,7 +201,7 @@ $(document).ready(function () {
     
         data.forEach(item => {
             const card = document.createElement('div');
-            card.className = 'col-6 col-md-4 col-lg-3';
+            card.className = 'col-6 col-md-4 col-lg-3 cardSearch';
     
             // Wrap the card content with an anchor tag
             const cardLink = document.createElement('a');
@@ -261,7 +261,7 @@ $(document).ready(function () {
     
         data.forEach(item => {
             const card = document.createElement('div');
-            card.className = 'px-2 col-md-6 mb-3 reveal-card';
+            card.className = 'px-2 col-md-6 mb-3 cardSearch';
     
             // Wrap the list content with an anchor tag
             const cardLink = document.createElement('a');
@@ -331,6 +331,33 @@ $(document).ready(function () {
     }
 
     $(window).resize(handleListStyling);
+
+    // Function to search the catalogue
+    function searchBarCatalogue() {
+        var searchTerm = $("#searchBarInput").val().toLowerCase();
+
+        $(".cardSearch").each(function() {
+            var mangaName = $(this).find(".card-title").text().toLowerCase();
+            if (mangaName.includes(searchTerm)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    $("#searchForm").on("submit", function(event) {
+        event.preventDefault();
+        searchBarCatalogue();
+    });
+
+    $("#searchBarInput").on("input", function() {
+        searchBarCatalogue();
+    });
+
+    $("#searchBarBtn").on("click", function() {
+        searchBarCatalogue();
+    });
 
     // Function to create and append carousel items
     function appendCarouselItem(data) {
@@ -570,10 +597,7 @@ $(document).ready(function () {
         $('#card-view').removeClass('d-none').addClass('d-block');
         $('#list-view').removeClass('d-block').addClass('d-none');
     });
-});
 
-
-$(document).ready(function() {
     ScrollReveal().reveal('.reveal', { distance: '120px', origin : 'left', delay : '250',  easing: 'ease-in' });
     ScrollReveal().reveal('.reveal-text', { distance: '120px', origin : 'top', delay : '250', interval : '250', easing: 'ease-in' });
     ScrollReveal().reveal('.reveal-tag', { interval : '100',  easing: 'ease-in' });
@@ -581,7 +605,6 @@ $(document).ready(function() {
     ScrollReveal().reveal('.skill-title', { delay : '50', easing: 'ease-in' });
     ScrollReveal().reveal('.main-section-text',  {distance: '120px', origin : 'left', interval : '200', easing: 'ease-in' });
     ScrollReveal().reveal('.profile-image',  {distance: '120px', origin : 'right', delay : '250', easing: 'ease-in'});
-    ScrollReveal().reveal('.reveal-card',  {distance: '120px', origin : 'bottom', delay : '250', interval : '200', easing: 'ease-in'});
     ScrollReveal().reveal('.reveal-chapter', { delay : '150', easing: 'ease-in' });
 })
 
