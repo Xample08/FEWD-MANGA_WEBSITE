@@ -81,7 +81,7 @@ $(document).ready(function () {
             chapter: [""]
         },
         {
-            imageSrc: "../IMAGE/MANGACOVER/SpyxFamilyVol1.jpg",
+            imageSrc: "../IMAGE/MANGACOVER/SPYxFamilyVol1.jpg",
             name: "Spy x Family, Vol. 1",
             tags: ["Action", "Comedy", "Drama", "Romance", "School Life", "Slice of Life"],
             description: `The master spy codenamed <Twilight> has spent most of his life on undercover missions, all for the dream of a better world. Yet one day he receives a particularly difficult order from command. For his mission, he must form a temporary family and start a new life?!<br>A Spy/Action/Comedy manga about a one-of-a-kind family!`,
@@ -101,7 +101,7 @@ $(document).ready(function () {
             chapter: [""]
         },
         {
-            imageSrc: "../IMAGE/MANGACOVER/SpyxFamilyVol6.jpg",
+            imageSrc: "../IMAGE/MANGACOVER/SPYxFamilyVol6.jpg",
             name: "Spy x Family, Vol. 6",
             tags: ["Action", "Comedy", "Drama", "Romance", "School Life", "Slice of Life"],
             description: `The master spy codenamed <Twilight> has spent most of his life on undercover missions, all for the dream of a better world. Yet one day he receives a particularly difficult order from command. For his mission, he must form a temporary family and start a new life?!<br>A Spy/Action/Comedy manga about a one-of-a-kind family!`,
