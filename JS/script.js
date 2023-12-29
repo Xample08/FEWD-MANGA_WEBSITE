@@ -186,14 +186,17 @@ $(document).ready(function () {
     var counterMangaItem = 1;
     var navbarHeight = $('.navbar').outerHeight();
     var carouselControls = $('.carousel-control-prev, .carousel-control-next');
-    var searchCatalogue = $('.main-section');
+    var searchCatalogue = $('.catalogue-container');
     carouselControls.css({
         'margin-top': navbarHeight/2,
     });
     searchCatalogue.css({
         'margin-top': navbarHeight,
     });
-
+    searchCatalogue.css({
+        'margin-top': navbarHeight,
+    });
+    
     function createCardView(data) {
         const cardViewContainer = document.getElementById('card-view');
     
