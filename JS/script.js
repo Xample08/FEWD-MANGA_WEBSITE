@@ -196,7 +196,122 @@ $(document).ready(function () {
     searchCatalogue.css({
         'margin-top': navbarHeight,
     });
+
+    var gameData = [
+        {
+            imageSrc: "../IMAGE/MANGACOVER/JujutsuKaisenVol4.jpg",
+            title: "Jujutsu Kaisen, Vol. 4"
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/HaikyuuVol39.jpg",
+            title: "Haikyu!!, Vol. 39"
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/DrStoneVol24.jpg",
+            title: "Dr. Stone, Vol. 24"
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/KaguyaSamaLoveIsWarVol21.jpg",
+            title: "Kaguya-sama: Love is War, Vol. 21"
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/ChainsawManVol3.jpg",
+            title: "Chainsaw Man, Vol. 3"
+        },
+        {
+            imageSrc: "../IMAGE/MANGACOVER/SpyxFamilyVol6.jpg",
+            title: "Spy x Family, Vol. 6"
+        }
+    ];
+
+    var backOfCard = "../IMAGE/backOfCard.jpg";
+    var gameBoard = $("#game-board");
+    var cardPairs = gameData.concat(gameData);
+    var moves = 0;
+
+    // Shuffle the cards
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+    // Click event for cards
+    function cardClick() {
+
+        var selectedCard = $(this);
+
+        if (selectedCard.hasClass('flipped') || flippedCards.length >= 2) {
+            return;
+        }
+
+        moves++;
+        $('#moves').text(moves);
+        
+        var index = selectedCard.data('index');
+        selectedCard.children('img').attr('src', cardPairs[index].imageSrc);
+        selectedCard.addClass('flipped');
+
+        flippedCards.push({
+            card: selectedCard,
+            index: index,
+            title: selectedCard.children('img').attr('id')
+        });
+
+        if (flippedCards.length === 2) {
+            setTimeout(checkMatch, 1000);
+        }
+    }
+
+    // Check if the two flipped cards match
+    function checkMatch() {
+        var card1 = flippedCards[0];
+        var card2 = flippedCards[1];
+        console.log(card1);
+        console.log(card2);
+
+        if (card1.title === card2.title) {
+            matchedPairs++;
+
+            if (matchedPairs === gameData.length) {
+                alert("Congratulations! You've matched all pairs!");
+            }
+        } else {
+            card1.card.children('img').attr('src', backOfCard);
+            card2.card.children('img').attr('src', backOfCard);
+            card1.card.removeClass('flipped');
+            card2.card.removeClass('flipped');
+        }
+
+        flippedCards = [];
+    }
+
+    // Reset the game
+    function resetGame() {
+        shuffleArray(cardPairs);
+        gameBoard.empty();
     
+        for (var i = 0; i < cardPairs.length; i++) {
+            var card = $("<div class='card col-lg-2 col-4 p-2 bg-transparent border-0' data-index='" + i + "'><img id='card-" + cardPairs[i].title.replace(/\s+/g, '-').toLowerCase() + "' class='img-fluid rounded-1' src='" + backOfCard + "' alt='Card Back'></div>");
+            card.click(cardClick);
+            gameBoard.append(card);
+        }
+        
+        flippedCards = [];
+        matchedPairs = 0;
+        moves = 0;
+        $('#moves').text(moves);
+    }    
+
+    // Initial game setup
+    resetGame();
+
+    // Reset button click event
+    $("#reset-button").click(resetGame);
+
     function createCardView(data) {
         const cardViewContainer = document.getElementById('card-view');
     

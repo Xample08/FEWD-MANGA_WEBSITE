@@ -180,3 +180,7 @@ a.textFooter:hover {
     scrollbar-width: thin; /* Hide scrollbar for Firefox */
 }
 
+/* Memory Game */
+.card {
+    cursor: pointer;
+}
