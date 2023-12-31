@@ -219,7 +219,7 @@ $(document).ready(function () {
             title: "Chainsaw Man, Vol. 3"
         },
         {
-            imageSrc: "../IMAGE/MANGACOVER/SpyxFamilyVol6.jpg",
+            imageSrc: "../IMAGE/MANGACOVER/SPYxFAMILYVol6.jpg",
             title: "Spy x Family, Vol. 6"
         }
     ];
