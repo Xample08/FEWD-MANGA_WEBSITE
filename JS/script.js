@@ -51,6 +51,16 @@ $(document).ready(function () {
             chapter: ["../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (1).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (2).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (3).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (4).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (5).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (6).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (7).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (8).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (9).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (10).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (11).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (12).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (13).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (14).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (15).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (16).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (17).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (18).jpg", "../IMAGE/CHAPTERPREVIEW/JujutsuKaisenVol8Chapter/page (19).jpg"]
         },
         {
+            imageSrc: "../IMAGE/MANGACOVER/SPYxFAMILYVol6.jpg",
+            name: "Spy x Family, Vol. 6",
+            tags: ["Action", "Comedy", "Drama", "Romance", "School Life", "Slice of Life"],
+            description: `The master spy codenamed <Twilight> has spent most of his life on undercover missions, all for the dream of a better world. Yet one day he receives a particularly difficult order from command. For his mission, he must form a temporary family and start a new life?!<br>A Spy/Action/Comedy manga about a one-of-a-kind family!`,
+            author: "Endo Tatsuya",
+            link: "../HTML/MANGA/MANGA11.html",
+            active: false,
+            chapter: [""]
+        },
+        {
             imageSrc: "../IMAGE/MANGACOVER/KaguyaSamaLoveIsWarVol19.jpg",
             name: "Kaguya-sama: Love Is War, Vol. 19",
             tags: ["Recommended", "Psychological", "Romance", "Comedy", "School Life", "Slice of Life"],
@@ -97,16 +107,6 @@ $(document).ready(function () {
             description: `Imagine waking to a world where every last human has been mysteriously turned to stone...<br><br>One fateful day, all of humanity was petrified by a blinding flash of light. After several millennia, high schooler Taiju awakens and finds himself lost in a world of statues. However, he's not alone! His science-loving friend Senku's been up and running for a few months and he's got a grand plan in mind—to kickstart civilization with the power of science!`,
             author: "Inagaki Riichiro",
             link: "../HTML/MANGA/MANGA10.html",
-            active: false,
-            chapter: [""]
-        },
-        {
-            imageSrc: "../IMAGE/MANGACOVER/SPYxFAMILYVol6.jpg",
-            name: "Spy x Family, Vol. 6",
-            tags: ["Action", "Comedy", "Drama", "Romance", "School Life", "Slice of Life"],
-            description: `The master spy codenamed <Twilight> has spent most of his life on undercover missions, all for the dream of a better world. Yet one day he receives a particularly difficult order from command. For his mission, he must form a temporary family and start a new life?!<br>A Spy/Action/Comedy manga about a one-of-a-kind family!`,
-            author: "Endo Tatsuya",
-            link: "../HTML/MANGA/MANGA11.html",
             active: false,
             chapter: [""]
         },
@@ -595,6 +595,9 @@ $(document).ready(function () {
         var revealClass = "reveal";
         var revealTextClass ="reveal-text";
         var revealTagClass = "reveal-tag";
+        
+        // Update the page title
+        $('head title').text(data.name);
     
         var tagsHtml = "";
         for (var i = 0; i < data.tags.length; i++) {
@@ -694,7 +697,7 @@ $(document).ready(function () {
         });
     }
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
         var data = mangaData[i];
         appendCarouselItem(data);
     }
